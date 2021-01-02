@@ -1,3 +1,5 @@
+import time
+
 class element:
     def __init__(self, name, num, mass):
         self.name = name,
@@ -126,34 +128,67 @@ massa = {
     "Og": element("Oganessônio", 118, 294)
 }
 
-num = (1, 2, 3, 4, 5, 6, 7, 8, 9)
+num = ('1', '2', '3', '4', '5', '6', '7', '8', '9')
 
 
 def massa_molecular(molecula):
-    print(f"\nMolécula: {molecula}")
     molecula = list(molecula)
+    molecula2 = []
+    for i in range(len(molecula)):
+        if i == len(molecula) - 1:
+            molecula2.append(molecula[i])
+        else:
+            try:
+                if str(molecula[i + 1]).islower() and molecula[i] not in num:
+                    molecula2.append(molecula[i] + molecula[i + 1])
+                    del(molecula[i + 1])
+                else:
+                    molecula2.append(molecula[i])
+            except:
+                pass
     mm = 0
     qm = 1
+    elementos = []
     try:
-        if int(molecula[0]) in num:
-            qm = int(molecula[0])
-            del(molecula[0])
+        if molecula2[0] in num:
+            qm = int(molecula2[0])
+            del(molecula2[0])
     except:
         pass
+    molecula = ""
+    for i in molecula2:
+        if i not in num and i not in massa:
+            del i
+        else:
+            molecula += i
     for atomo in range(len(molecula)):
         for elemento in massa:
             if molecula[atomo] == elemento:
+                elementos.append(elemento)
                 ma = massa[elemento].mass
                 try:
-                    if int(molecula[atomo + 1]) in num:
+                    if molecula[atomo + 1] in num:
                         ma = int(ma) * int(molecula[atomo + 1])
                 except:
                     pass
                 mm += int(ma)
+    print(f"\nMolécula: {molecula}")
     print(f"Massa Molecular: {mm}")
     print(f"Quantidade de moléculas: {qm}")
+    print(f"Átomos: {elementos}")
     if qm != 1:
         print(f"M.M. * Q.M. = {mm * qm}")
 
 
-massa_molecular(str(input("Digite uma molécula: ")))
+while True:
+    print(f"---------- Operação ----------\n\n1 - Massa Molecular\n2 - ...")
+    number = int(input("\nDigite um número: "))
+    if number == 1:
+        molecula = str(input("Digite uma molécula: "))
+        massa_molecular(molecula)
+    time.sleep(5)
+    c = str(input("\nDeseja continuar? (S/N): "))
+    if c.lower() == "s":
+        pass
+    else:
+        break
