@@ -141,19 +141,17 @@ def massa_molecular(molecula):
         print(qm)
     except:
         pass
-    for i in range(len(molecula)):
-        try:
-            if int(molecula[i]) in num:
-                print(molecula[i])
-                del(molecula[i])
-        except:
-            pass
-    for atomo in molecula:
+    for atomo in range(len(molecula)):
         for elemento in massa:
-            if atomo == elemento:
-                mm += massa[elemento].mass
+            if molecula[atomo] == elemento:
+                ma = massa[elemento].mass
+                try:
+                    if int(molecula[atomo + 1]) in num:
+                        ma = int(ma) * int(molecula[atomo + 1])
+                except:
+                    pass
+                mm += int(ma)
     print(f"Massa Molecular: {mm}")
-    return molecula
 
 
-print(massa_molecular(str(input("Digite uma molécula: "))))
+massa_molecular(str(input("Digite uma molécula: ")))
