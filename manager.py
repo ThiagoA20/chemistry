@@ -1,28 +1,43 @@
-from massa import massa_molecular
-from nomenclatura import name
+from mass import molecular_mass
+from nomenclature import name
+from nox import nox
+from valence_layer import layers
+from atoms import atoms
 import time
 
 if __name__ == "__main__":
     while True:
-        print(f"---------- Operação ----------\n\n1 - Massa Molecular\n2 - Nomenclatura\n3 - ...")
-        number = int(input("\nDigite um número: "))
-        if number == 1:
-            molecula = str(input("Digite uma molécula: "))
-            molecula = massa_molecular(molecula)
-            print(f"\nFórmula molecular: {molecula.fm}")
-            print(f"Massa molecular por mol: {molecula.mm}g")
-            print(f"Quantidade de moléculas: {molecula.qm}")
-            if molecula.mm != molecula.mc:
-                print(f"Massa calculada: {molecula.mc}")
-            print(f"Átomos na molécula: {molecula.atomos}")
-        elif number == 2:
-            molecula = str(input("Digite uma molécula: "))
-            molecula = massa_molecular(molecula)
-            print(name(molecula).nomenclatura)
+        print(f"---------- Operation ----------\n\n1 - Molecular Mass\n2 - Nomenclature\n3 - Oxidation Number\n4 - "
+              f"Atom valence\n5 - ...")
+        number = str(input("\nType a number: "))
+        if number == '1':
+            molecule = str(input("Type a molecule: "))
+            molecule = molecular_mass(molecule)
+            print(f"\nMolecular mass per mol: {molecule.mm}g")
+            print(f"Amount of molecules: {molecule.qm}")
+            if molecule.mm != molecule.mc:
+                print(f"Calculated mass: {molecule.mc}")
+            print(f"Atoms in molecule: {molecule.atoms}")
+        elif number == '2':
+            molecule = str(input("Type a molecule: "))
+            molecule = molecular_mass(molecule)
+            print(name(molecule, nox(molecule.mol_of_elements)).nomenclature)
+        elif number == '3':
+            molecule = str(input("Type a molecule: "))
+            molecule = molecular_mass(molecule)
+            nox(molecule.mol_of_elements)
+        elif number == '4':
+            atomic_number = str(input("Type the acronym of an atom: "))
+            atomic_number = atoms[atomic_number].num
+            print(layers(atomic_number))
+        else:
+            print("Invalid Number!")
 
         time.sleep(5)
-        c = str(input("\nDeseja continuar? (S/N): "))
-        if c.lower() == "s":
+        c = str(input("\nContinue? (Y/N): "))
+        if c.lower() == "y":
             pass
-        else:
+        elif c.lower() == "n":
             break
+        else:
+            pass
