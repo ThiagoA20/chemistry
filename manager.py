@@ -8,12 +8,12 @@ import time
 if __name__ == "__main__":
     while True:
         print(f"---------- Operation ----------\n\n1 - Molecular Mass\n2 - Nomenclature\n3 - Oxidation Number\n4 - "
-              f"Atom valence\n5 - ...")
+              f"Atom valence\n5 - ionic_dissociation\n6 - ...")
         number = str(input("\nType a number: "))
         if number == '1':
             molecule = str(input("Type a molecule: "))
             molecule = molecular_mass(molecule)
-            print(f"\nMolecular mass per mol: {molecule.mm}g")
+            print(f"\nMolecular mass: {molecule.mm}g/mol")
             print(f"Amount of molecules: {molecule.qm}")
             if molecule.mm != molecule.mc:
                 print(f"Calculated mass: {molecule.mc}")
@@ -23,13 +23,16 @@ if __name__ == "__main__":
             molecule = molecular_mass(molecule)
             print(name(molecule, nox(molecule.mol_of_elements)).nomenclature)
         elif number == '3':
-            molecule = str(input("Type a molecule: "))
+            print("Working on! :)")
+            """molecule = str(input("Type a molecule: "))
             molecule = molecular_mass(molecule)
-            nox(molecule.mol_of_elements)
+            nox(molecule.mol_of_elements)"""
         elif number == '4':
             atomic_number = str(input("Type the acronym of an atom: "))
             atomic_number = atoms[atomic_number].num
             print(layers(atomic_number))
+        elif number == '5':
+            pass
         else:
             print("Invalid Number!")
 
