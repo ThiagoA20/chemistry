@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promol</title>
+    <link href="{% static 'media/molecule.png' %}" rel="icon">
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="back-container">
+        <div class="dashboard-main">
+            <div class="dash-container">
+                <div class="arrow-expand">
+                    <img src="{% static 'media/next.png' %}" class="arrow">
+                </div>
+                <div class="logo-container">
+                    <div class="center-text nav-element">
+                        <div class="text-border">
+                            <div class="tb-text">
+                                <img src="{% static 'media/molecule.png' %}">
+                            </div>
+                            <div class="element-name">Promol</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-container">
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Simulations</a>
+                        <img src="{% static 'media/simulation.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Receivers</a>
+                        <img src="{% static 'media/medicine.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Primer</a>
+                        <img src="{% static 'media/dna.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Periodic Table</a>
+                        <img src="{% static 'media/periodic-table.png' %}" class="nav-image">
+                    </div>
+                </div>
+                <div class="settings-logout">
+                    <span><a href="">Settings</a></span>
+                    <span><a href="">Logout</a></span>
+                </div>
+            </div>
+            <div class="views-container">
+                <div class="dash-main dash-element a1">
+                    <div class="main-contracts">
+                    </div>
+                </div>
+                <div class="dash-view dash-element a2">
+                    <div class="main-contracts">
+                    </div>
+                </div>
+                <div class="dash-view dash-element a3">
+                    <div class="main-contracts">
+                    </div>
+                </div>
+                <div class="dash-view dash-element a4">
+                    <div class="main-contracts">
+                    </div>
+                </div>
+                <div class="dash-view dash-element a5">
+                    <div class="main-contracts">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="{% static 'js/dash.js' %}"></script>
+<!-- <script src="`{% static '../../node_modules/chart.js/dist/chart.js' %^}"></script>
+<script>
+    let ctx = document.getElementById('mychart')
+    let Chart = require("chart.js")
+    let myChart = new Chart(ctx, {
+        type: "line",
+    })
+</script> -->
+</html>
+
+<!-- gráfico, relatorio de operacoes, carteira com saldo total e gráfico de círculo mostrando  -->
