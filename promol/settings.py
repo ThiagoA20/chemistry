@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'newmol',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -64,8 +66,12 @@ WSGI_APPLICATION = 'promol.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'DEMO_TEST',
+        'USER': 'postgres',
+        'PASSWORD':'admin',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

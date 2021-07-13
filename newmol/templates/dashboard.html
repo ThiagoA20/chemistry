@@ -29,11 +29,11 @@
                 </div>
                 <div class="nav-container">
                     <div class="nav-item nav-element">
-                        <a class="nav-text">Simulations</a>
+                        <a class="nav-text">Simulações</a>
                         <img src="{% static 'media/simulation.png' %}" class="nav-image">
                     </div>
                     <div class="nav-item nav-element">
-                        <a class="nav-text">Receivers</a>
+                        <a class="nav-text">Receptores</a>
                         <img src="{% static 'media/medicine.png' %}" class="nav-image">
                     </div>
                     <div class="nav-item nav-element">
@@ -41,8 +41,16 @@
                         <img src="{% static 'media/dna.png' %}" class="nav-image">
                     </div>
                     <div class="nav-item nav-element">
-                        <a class="nav-text">Periodic Table</a>
+                        <a class="nav-text">Tabela Periódica</a>
                         <img src="{% static 'media/periodic-table.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Equações</a>
+                        <img src="{% static 'media/math.png' %}" class="nav-image">
+                    </div>
+                    <div class="nav-item nav-element">
+                        <a class="nav-text">Relatórios</a>
+                        <img src="{% static 'media/report.png' %}" class="nav-image">
                     </div>
                 </div>
                 <div class="settings-logout">
@@ -52,23 +60,166 @@
             </div>
             <div class="views-container">
                 <div class="dash-main dash-element a1">
-                    <div class="main-contracts">
+                    <div class="main-contracts title-n">
+                        <h1>Molecule maker</h1>
+                        <div class="creator-h">
+                            <div class="inorganic-creator">
+                                <div class="creator-w">
+                                    <img src="{% static 'media/next.png' %}" class="right-arrow">
+                                    <div id="box-inorganic">
+                                        <div id="mol_stats">
+                                            <p>NOX: <span id="nox-in"></span></p>
+                                            <p>Nome: <span id="name-in"></span></p>
+                                            <p>Classificação: <span id="class-in"></span></p>
+                                            <p>Massa Molecular: <span id="mass-in"></span></p>
+                                        </div>
+                                        <div id="molecule_preview-box">
+                                            <div class="align-center">
+                                                <div id="molecule_preview"></div>
+                                            </div>
+                                            <canvas id="molecule_preview-canvas"></canvas>
+                                        </div>
+                                        <div id="mol_nav_bar">
+                                            <img src="{% static 'media/delete.png' %}" id="del-in">
+                                            <img src="{% static 'media/save.png' %}" id="save-in">
+                                        </div>
+                                        <div id="molecule_representation_bt">
+                                            <p>Estabilidade: <span id="estabilidade-in"></span></p>
+                                            <div>
+                                                <button id="lewis">e<sup>-</sup></button>
+                                                <button id="estrutural">/\/</button>
+                                                <button id="molecular">HCl</button>
+                                                <button id="3d">3D</button>
+                                            </div>
+                                            <p>Elétrons: <span id="eletrons-in"></span></p>
+                                        </div>
+                                        <div id="atom-selection"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selector">
+                                <div class="creator">
+                                    <span class="moltype">Choose the molecule type:</span>
+                                </div>
+                                <div class="creator">
+                                    <div class="inorganic">
+                                        <button id="inorganic-bt">
+                                            <span class="bt-title">Inorganic</span>
+                                            <span>NaCl</span>
+                                        </button>
+                                    </div>
+                                    <div class="organic">
+                                        <button id="organic-bt">
+                                            <span class="bt-title">Organic</span>
+                                            <span>H</span>
+                                            <span>┃</span>
+                                            <span>H ━ C ━ H</span>
+                                            <span>┃</span>
+                                            <span>H</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="organic-creator">
+                                <div class="creator-w">
+                                    <img src="{% static 'media/next.png' %}" class="left-arrow">
+                                    <span>organic test</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dash-view dash-element a2">
-                    <div class="main-contracts">
+                    <div class="main-contracts title-n">
+                        <h1>Simulations</h1>
+                        <div class="scene"></div>
+                        <script src="../static/js/three.min.js"></script>
+                        <script src="../static/js/GLTFLoader.js"></script>
                     </div>
                 </div>
                 <div class="dash-view dash-element a3">
-                    <div class="main-contracts">
+                    <div class="main-contracts title-n">
+                        <h1>Receivers - Anatomy</h1>
                     </div>
                 </div>
                 <div class="dash-view dash-element a4">
-                    <div class="main-contracts">
+                    <div class="main-contracts title-n">
+                        <h1>Primer</h1>
                     </div>
                 </div>
+
                 <div class="dash-view dash-element a5">
-                    <div class="main-contracts">
+                    <div class="main-contracts title-n">
+                        <h1 id="table">Periodic Table</h1>
+                        <div class="align-middle-h">
+                            <div class="align-middle-w">
+                                <div class="tables">
+                                    <h3 class="chem-table">Chemistry</h3>
+                                    <div id="switch" class="hover" onclick="this.classList.toggle('hover')">
+                                        <div id="toggle">
+                                        </div>
+                                    </div>
+                                    <h3 class="phys-table">Physics</h3>
+                                </div>
+                                <div class="switch-tables">
+                                    <div class="align-w">
+                                        <div class="Periodic-table"></div>
+                                    </div>
+                                    <div class="Standard-model"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-view dash-element a6">
+                    <div class="main-contracts title-n">
+                        <h1>Equations</h1>
+                        <div class="chart-box">
+                            {% if chart %}
+                                <img src="data:image/png;base64, {{chart|safe}}">
+                            {% endif %}
+                        </div>
+                        <div class="create-function">
+                            <div class="interval">
+                                <div class="center-values">
+                                    <div>
+                                        <input type="text" placeholder="Title">
+                                        <input type="text" placeholder="y-axis">
+                                        <input type="text" placeholder="x-axis">
+                                        <input type="number" placeholder="inicial number">
+                                        <input type="number" placeholder="final number">
+                                        <input type="number" placeholder="points between">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="function-maker">
+                                <div class="function-visualization">
+                                    <div>
+                                        <h2>E=mc²</h2>
+                                    </div>
+                                </div>
+                                <div class="equation">
+                                    <button>*</button>
+                                    <button>/</button>
+                                    <button>+</button>
+                                    <button>-</button>
+                                    <button>(</button>
+                                    <button>)</button>
+                                    <button>=</button>
+                                    <button>√</button>
+                                    <button><</button>
+                                    <button class="shift">SHIFT</button>
+                                    <button>></button>
+                                    <button><--DEL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-view dash-element a7">
+                    <div class="main-contracts title-n">
+                        <h1>Reports</h1>
                     </div>
                 </div>
             </div>
@@ -77,14 +228,4 @@
 
 </body>
 <script src="{% static 'js/dash.js' %}"></script>
-<!-- <script src="`{% static '../../node_modules/chart.js/dist/chart.js' %^}"></script>
-<script>
-    let ctx = document.getElementById('mychart')
-    let Chart = require("chart.js")
-    let myChart = new Chart(ctx, {
-        type: "line",
-    })
-</script> -->
 </html>
-
-<!-- gráfico, relatorio de operacoes, carteira com saldo total e gráfico de círculo mostrando  -->

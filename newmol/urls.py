@@ -5,5 +5,5 @@ app_name = 'promol'
 
 urlpatterns = [
     path('', home_page, name='home'),
-    path('chemchain/', molecule, name='chemchain'),
+    path('dashboard/', molecule, name='dashboard'),
 ]

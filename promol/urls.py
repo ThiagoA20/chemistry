@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('newmol.urls'), name='promol'),
+    path('api/', include('api.urls'), name='api'),
 ]

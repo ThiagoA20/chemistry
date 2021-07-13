@@ -229,6 +229,7 @@ body {
     border-left: solid 1px #1C211F;
     font-size: 1rem;
     transition: 1s;
+    z-index: 888;
 }
 
 .dash-container .arrow-expand {
@@ -330,6 +331,8 @@ body {
     background-color: #1C211F;
     justify-items: center;
     transition: 1s;
+    z-index: 999;
+    overflow: hidden;
 }
 
 .user-container {
@@ -437,7 +440,7 @@ body {
 /* Main menu */
 
 .a1 {
-    z-index: 5;
+    z-index: 7;
 }
 
 .main-menu {
@@ -484,7 +487,7 @@ body {
 
 .a2 {
     display: none;
-    z-index: 4;
+    z-index: 6;
 }
 
 
@@ -492,7 +495,7 @@ body {
 
 .a3 {
     display: none;
-    z-index: 3;
+    z-index: 5;
 }
 
 
@@ -500,13 +503,23 @@ body {
 
 .a4 {
     display: none;
-    z-index: 2;
+    z-index: 4;
 }
 
 
 /* Jackpot */
 
 .a5 {
+    display: none;
+    z-index: 3;
+}
+
+.a6 {
+    display: none;
+    z-index: 2;
+}
+
+.a7 {
     display: none;
     z-index: 1;
 }
@@ -709,3 +722,578 @@ body {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.title-n {
+    font-size: 1.2rem;
+    color: #0094C6;
+    position: relative;
+}
+
+.title-n h1 {
+    margin-left: 1%;
+    width: max-content;
+    height: max-content;
+    position: absolute;
+}
+
+/* toggle button */
+
+#switch {
+    width:130px;
+    padding:2px;
+    border:4px solid red;
+    box-sizing:border-box;
+    -webkit-transition:all 03s;
+    transition:all 0.5s;
+    border-radius:530px;
+    cursor:pointer;
+  }
+  
+  #toggle {
+    width:35px;
+    height:35px;
+    background:red;
+    border-radius:100%;
+    position:relative;
+    transition:all 0.5s;
+    left:83.1px;
+    -webkit-transition:all 0.5s;
+  }
+  
+  #switch.hover #toggle {
+    left:0;
+    background:lime;
+  }
+  
+  #switch.hover {
+    border:4px solid lime;
+  }
+
+/* Molecule maker */
+
+.creator-h {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.selector {
+    transition: 0.5s;
+}
+
+.right-arrow {
+    margin-left: 93%;
+    margin-top: 22%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.creator {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.creator-w {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.left-arrow {
+    margin-left: -870%;
+    width: 25px;
+    height: 25px;
+    transform: rotate(180deg);
+    cursor: pointer;
+    position: absolute;
+}
+
+.inorganic-creator {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    margin-left: -3000px;
+    transition: 0.5s;
+}
+
+#box-inorganic {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#mol_nav_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #0094C6;
+}
+
+#mol_stats {
+    color: #FAFAFF;
+    width: 45vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+#molecule_preview-box {
+    border: 1px solid #0094C6;
+    width: 60%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#molecule_preview {
+    width: max-content;
+    height: max-content;
+    color: #FAFAFF;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+#molecule_preview-canvas {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.align-center {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.elem-abr {
+    cursor: pointer;
+}
+
+.elem-abr:hover {
+    color: red;
+}
+
+#atom-selection {
+    border: 1px solid #FAFAFF;
+    width: 70%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#atom-selection button {
+    background-color: #1C211F;
+    border: 0.1px solid orangered;
+    color: #FAFAFF;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0.8%;
+    width: 3.2%;
+    height: 15%;
+}
+
+#box-inorganic img {
+    width: 25px;
+    height: 25px;
+    margin: 15px;
+    cursor: pointer;
+}
+
+#molecule_representation_bt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+#molecule_representation_bt p {
+    color: #FAFAFF;
+    font-size: 1.5rem;
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#molecule_representation_bt p span {
+    margin-left: 10px;
+}
+
+#molecule_representation_bt button {
+    background-color: #1C211F;
+    border: 0.1px solid #FAFAFF;
+    color: #FAFAFF;
+    font-weight: bold;
+    margin: 15px;
+    width: 35px;
+    height: 35px;
+}
+
+.organic-creator {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    margin-left: 3000px;
+    transition: 0.5s;
+}
+
+.creator button {
+    color: #FAFAFF;
+    font-size: 1.5rem;
+    background-color: #1C211F;
+    width: 350px;
+    height: 350px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0.1px solid darkgray;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.creator button:hover {
+    font-weight: bold;
+    color: #1C211F;
+    opacity: 1;
+}
+
+#inorganic-bt:hover {
+    background-color: red;
+}
+
+/* ligações */
+
+.covalent {
+    border: 1px solid cyan;
+}
+
+.ionic {
+    border: 1px solid lime;
+}
+
+.metalic {
+    border: 1px solid red;
+}
+
+/* -------- */
+
+#organic-bt:hover {
+    background-color: lime;
+}
+
+.creator button span {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bt-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FAFAFF;
+}
+
+.moltype {
+    color: #FAFAFF;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* Simulations */
+
+.scene,
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Periodic table / Standard Model */
+
+
+.align-middle-h {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.align-middle-w {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tables {
+    width: 95%;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tables h3 {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.chem-table {
+    color: lime;
+}
+
+.phys-table {
+    color: red;
+    opacity: 0.5;
+}
+
+.switch-tables {
+    width: 95%;
+    height: 90vh;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.align-w {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Periodic-table {
+    width: max-content;
+    height: max-content;
+}
+
+.ptable-line {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.p-element {
+    width: 4.5vw;
+    height: 8vh;
+    color: #FAFAFF;
+    font-size: 1rem;
+    border: solid 0.5px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.space1 {
+    height: 8vh;
+    width: 73.6vw;
+}
+
+.space2 {
+    height: 8vh;
+    width: 46vw;
+}
+
+.space3 {
+    width: 4.5vw;
+    height: 8vh;
+}
+
+.space4 {
+    width: 13.7vw;
+    height: 8vh;
+}
+
+.Alkali-metals {
+    background-color: rgba(255, 174, 0, 0.425);
+}
+
+.Alkali-metals:hover,
+.Alkaline-earth:hover,
+.Noble-gases:hover,
+.Metalloids:hover,
+.Transition-metals:hover,
+.Actinoids:hover,
+.Lanthanoids:hover,
+.Reactive-nonmetals:hover,
+.Post-transition-metals:hover {
+    background-color: #FAFAFF;
+    color: black;
+    font-weight: bold;
+}
+
+.Alkaline-earth {
+    background-color: darkgoldenrod;
+}
+
+.Noble-gases {
+    background-color: darkslateblue;
+}
+
+.Transition-metals {
+    background-color: darkred;
+}
+
+.Metalloids {
+    background-color: rgb(0, 197, 76);
+}
+
+.Reactive-nonmetals {
+    background-color: darkorange;
+}
+
+.Post-transition-metals {
+    background-color: darkblue;
+}
+
+.Lanthanoids {
+    background-color: darksalmon;
+}
+
+.Actinoids {
+    background-color: darkmagenta;
+}
+
+.Standard-model {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+
+/* Equations */
+
+.chart-box {
+    width: max-content;
+    height: max-content;
+    margin-top: 5%;
+    margin-left: 1%;
+}
+
+.create-function {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 55%;
+    height: 99.5%;
+}
+
+.interval {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.center-values {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-values div {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.interval input {
+    width: 10vw;
+    height: 3vh;
+    margin-top: 10px;
+    outline: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.function-maker {
+    width: 100%;
+    height: 79%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.function-maker button {
+    color: #FAFAFF;
+    background-color: #0094C6;
+    width: 5vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.function-visualization {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.function-visualization div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.function-visualization h2 {
+    height: max-content;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #FAFAFF;
+}
+
+.equation {
+    width: 50%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.equation .shift {
+    background-color: #FAFAFF;
+    color: #0094C6;
+}
+
