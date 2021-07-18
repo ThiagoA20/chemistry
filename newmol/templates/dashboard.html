@@ -11,44 +11,44 @@
     <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="back-container">
+    <div class="back-container dfjc">
         <div class="dashboard-main">
             <div class="dash-container">
                 <div class="arrow-expand">
                     <img src="{% static 'media/next.png' %}" class="arrow">
                 </div>
-                <div class="logo-container">
-                    <div class="center-text nav-element">
+                <div class="logo-container dfjc">
+                    <div class="center-text nav-element dfjc">
                         <div class="text-border">
-                            <div class="tb-text">
+                            <div class="tb-text dfjc">
                                 <img src="{% static 'media/molecule.png' %}">
                             </div>
-                            <div class="element-name">Promol</div>
+                            <div class="element-name dfjc">Promol</div>
                         </div>
                     </div>
                 </div>
-                <div class="nav-container">
-                    <div class="nav-item nav-element">
+                <div class="nav-container dfjc">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Simulações</a>
                         <img src="{% static 'media/simulation.png' %}" class="nav-image">
                     </div>
-                    <div class="nav-item nav-element">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Receptores</a>
                         <img src="{% static 'media/medicine.png' %}" class="nav-image">
                     </div>
-                    <div class="nav-item nav-element">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Primer</a>
                         <img src="{% static 'media/dna.png' %}" class="nav-image">
                     </div>
-                    <div class="nav-item nav-element">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Tabela Periódica</a>
                         <img src="{% static 'media/periodic-table.png' %}" class="nav-image">
                     </div>
-                    <div class="nav-item nav-element">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Equações</a>
                         <img src="{% static 'media/math.png' %}" class="nav-image">
                     </div>
-                    <div class="nav-item nav-element">
+                    <div class="nav-item nav-element dfjc">
                         <a class="nav-text">Relatórios</a>
                         <img src="{% static 'media/report.png' %}" class="nav-image">
                     </div>
@@ -58,28 +58,28 @@
                     <span><a href="">Logout</a></span>
                 </div>
             </div>
-            <div class="views-container">
-                <div class="dash-main dash-element a1">
+            <div class="views-container dfjc">
+                <div class="dash-main dash-element a1 dfjc">
                     <div class="main-contracts title-n">
                         <h1>Molecule maker</h1>
-                        <div class="creator-h">
-                            <div class="inorganic-creator">
+                        <div class="creator-h dfjc">
+                            <div class="inorganic-creator dfjc">
                                 <div class="creator-w">
                                     <img src="{% static 'media/next.png' %}" class="right-arrow">
-                                    <div id="box-inorganic">
+                                    <div id="box-inorganic" class="dfjc">
                                         <div id="mol_stats">
                                             <p>NOX: <span id="nox-in"></span></p>
                                             <p>Nome: <span id="name-in"></span></p>
                                             <p>Classificação: <span id="class-in"></span></p>
                                             <p>Massa Molecular: <span id="mass-in"></span></p>
                                         </div>
-                                        <div id="molecule_preview-box">
-                                            <div class="align-center">
+                                        <div id="molecule_preview-box" class="dfjc">
+                                            <div class="align-center dfjc">
                                                 <div id="molecule_preview"></div>
                                             </div>
                                             <canvas id="molecule_preview-canvas"></canvas>
                                         </div>
-                                        <div id="mol_nav_bar">
+                                        <div id="mol_nav_bar" class="dfjc">
                                             <img src="{% static 'media/delete.png' %}" id="del-in">
                                             <img src="{% static 'media/save.png' %}" id="save-in">
                                         </div>
@@ -93,23 +93,23 @@
                                             </div>
                                             <p>Elétrons: <span id="eletrons-in"></span></p>
                                         </div>
-                                        <div id="atom-selection"></div>
+                                        <div id="atom-selection" class="dfjc"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="selector">
-                                <div class="creator">
-                                    <span class="moltype">Choose the molecule type:</span>
+                                <div class="creator dfjc">
+                                    <span class="moltype dfjc">Choose the molecule type:</span>
                                 </div>
-                                <div class="creator">
+                                <div class="creator dfjc">
                                     <div class="inorganic">
-                                        <button id="inorganic-bt">
-                                            <span class="bt-title">Inorganic</span>
-                                            <span>NaCl</span>
+                                        <button id="inorganic-bt" class="dfjc">
+                                            <span class="bt-title dfjc">Inorganic</span>
+                                            <span class="dfjc">NaCl</span>
                                         </button>
                                     </div>
                                     <div class="organic">
-                                        <button id="organic-bt">
+                                        <button id="organic-bt" class="dfjc">
                                             <span class="bt-title">Organic</span>
                                             <span>H</span>
                                             <span>┃</span>
@@ -120,8 +120,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="organic-creator">
-                                <div class="creator-w">
+                            <div class="organic-creator dfjc">
+                                <div class="creator-w dfjc">
                                     <img src="{% static 'media/next.png' %}" class="left-arrow">
                                     <span>organic test</span>
                                 </div>
@@ -132,7 +132,9 @@
                 <div class="dash-view dash-element a2">
                     <div class="main-contracts title-n">
                         <h1>Simulations</h1>
-                        <div class="scene"></div>
+                        <div class="scene">
+                            <div></div>
+                        </div>
                         <script src="../static/js/three.min.js"></script>
                         <script src="../static/js/GLTFLoader.js"></script>
                     </div>
@@ -151,9 +153,9 @@
                 <div class="dash-view dash-element a5">
                     <div class="main-contracts title-n">
                         <h1 id="table">Periodic Table</h1>
-                        <div class="align-middle-h">
-                            <div class="align-middle-w">
-                                <div class="tables">
+                        <div class="align-middle-h dfjc">
+                            <div class="align-middle-w dfjc">
+                                <div class="tables dfjc">
                                     <h3 class="chem-table">Chemistry</h3>
                                     <div id="switch" class="hover" onclick="this.classList.toggle('hover')">
                                         <div id="toggle">
@@ -161,8 +163,8 @@
                                     </div>
                                     <h3 class="phys-table">Physics</h3>
                                 </div>
-                                <div class="switch-tables">
-                                    <div class="align-w">
+                                <div class="switch-tables dfjc">
+                                    <div class="align-w dfjc">
                                         <div class="Periodic-table"></div>
                                     </div>
                                     <div class="Standard-model"></div>
@@ -180,9 +182,9 @@
                                 <img src="data:image/png;base64, {{chart|safe}}">
                             {% endif %}
                         </div>
-                        <div class="create-function">
-                            <div class="interval">
-                                <div class="center-values">
+                        <div class="create-function dfjc">
+                            <div class="interval dfjc">
+                                <div class="center-values dfjc">
                                     <div>
                                         <input type="text" placeholder="Title">
                                         <input type="text" placeholder="y-axis">
@@ -193,13 +195,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="function-maker">
-                                <div class="function-visualization">
-                                    <div>
+                            <div class="function-maker dfjc">
+                                <div class="function-visualization dfjc">
+                                    <div class="dfjc">
                                         <h2>E=mc²</h2>
                                     </div>
                                 </div>
-                                <div class="equation">
+                                <div class="equation dfjc">
                                     <button>*</button>
                                     <button>/</button>
                                     <button>+</button>

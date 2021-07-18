@@ -280,6 +280,11 @@ function AtomsSelect(){
         }
         for (let i of atmbt) {
             i.addEventListener('click', () => {
+                // 
+                // 
+                // Adicionar função para se comunicar com python
+                // 
+                // 
                 atomObject(i.id)
             })
         }
@@ -392,7 +397,6 @@ function atualizarMolecula(elemento){
     // name_in.textContent = nomearMolecula(molecula)
 
     // Definir a classe
-    // class_in.textContent = definirClasse(molecula)
 }
 
 
@@ -405,19 +409,60 @@ function atualizarMolecula(elemento){
 
 // Atualizar as ligações, mudando as cores dos que farão ligação iônica e covalente na molécula
 function balancearLigacoes(elemento, molecula){
-    if (elemento.camada_de_valencia < 4) {
-        molecula.carga -= elemento.camada_de_valencia
-    } else if (elemento.camada_de_valencia > 4) {
-        molecula.carga += elemento.camada_de_valencia
-    } else {
-        if (molecula.carga < 0) {
-            molecula.carga += elemento.camada_de_valencia
-        } else if (molecula.carga > 0) {
-            molecula.carga -= elemento.camada_de_valencia
-        } else {
-            molecula.carga = elemento.camada_de_valencia
+    
+    // define a carga de cada elemento
+    let oxigenio = false
+    let hidrogenio = false
+    let acido = false
+    for (i in molecula.elements) {
+        if (molecula.elements[i].abreviacao == "H") {
+            hidrogenio = true
+        }
+        if (molecula.elements[i].abreviacao == "O") {
+            oxigenio = true
+        }
+        if (molecula.elements[i].camada_de_valencia > 4 & molecula.elements[i].abreviacao != "O") {
+            acido = true
         }
     }
+    
+    // O elemento mais eletronegativo puxa os elétrons
+    if (molecula.elements.length == 1) {
+        molecula.class = "simples"
+        for (i in molecula.elements) {
+            molecula.elements[i].carga = elemento.camada_de_valencia 
+        }
+    } else if (oxigenio == false & hidrogenio == false){
+        // Se não tiver nem oxigênio, nem hidrogênio é um sal
+        molecula.class = "Sal"
+        for (i in molecula.elements) {
+            if (molecula.elements[i].camada_de_valencia > 4) {
+                molecula.carga = (molecula.elements[i].camada_de_valencia - 8) * molecula.elements[i].Quantidade
+            } else {
+                molecula.carga += molecula.elements[i].camada_de_valencia
+            }
+        }
+    } else if (oxigenio == true & hidrogenio == false) {
+        // Se tiver apenas oxigênio é um óxido
+        molecula.class = "Óxido"
+        for (i in molecula.elements) {
+            if (molecula.elements[i].abreviacao == "O"){
+                molecula.carga = (molecula.elements[i].camada_de_valencia - 8) * molecula.elements[i].carga
+            } else {
+                molecula.carga += molecula.elements[i].camada_de_valencia
+            }
+        }
+    } else if (oxigenio == false & hidrogenio == true & molecula.elements.length != 2) {
+        molecula.class = "Sal"
+    } else if (acido == true) {
+        molecula.class = "Ácido"
+    } else if (molecula.elements.length > 3) {
+        molecula.class = "Sal"
+    } else {
+        molecula.class = "Base"
+    }
+    class_in.textContent = molecula.class
+
     eletrons_in.textContent = molecula.carga
     if (molecula.carga != 0) {
         estabilidade.textContent = "instável"
@@ -515,10 +560,6 @@ function calcularNox(molecula){
     // íon = carga
     // Substância não-neutra = carga
     // Substância simples é 0
-}
-
-function definirClasse(){
-    // Ácido, Base, Sal, Óxido
 }
 
 function calcularMassa(molecula){

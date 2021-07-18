@@ -8,6 +8,8 @@
 #005E7C
 #0094C6
 
+
+dfjc
 */
 
 * {
@@ -24,11 +26,14 @@ body {
     font-size: 62.5%;
 }
 
+.dfjc {
+    display: flex;
+    justify-content: center;
+}
+
 .back-container {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
     background-color: #1C211F;
 }
 
@@ -47,47 +52,6 @@ body {
     height: 100%;
 }
 
-
-.a1 a,
-.a2 a,
-.a3 a,
-.a4 a,
-.a5 a {
-    width: 85%;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    font-size: 2.5rem;
-    justify-content: center;
-}
-
-.list-wrapper {
-    width: 100%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-top: solid 1px #1C211F;
-    border-left: solid 1px #1C211F;
-    border-right: solid 1px #1C211F;
-}
-
-.task-wrapper {
-    width: 98%;
-    height: 250px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    color: #FAFAFF;
-    font-size: 1.2rem;
-    margin-top: 20px;
-    padding-left: 2%;
-    padding-right: -2%;
-    margin-bottom: 20px;
-}
-
-.task-wrapper .title {
-    font-weight: bold;
-}
-
 .main-contracts button {
     height: 40px;
     width: 17%;
@@ -102,91 +66,6 @@ body {
 
 .main-contracts button:hover {
     opacity: .8;
-}
-
-.contract-nav {
-    height: max-content;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.search-section {
-    width: 100%;
-    display: flex;
-    padding-top: 2vh;
-    justify-content: space-between;
-    padding-bottom: 2vh;
-}
-
-.arrow-expand img {
-    transition: 1s;
-}
-
-.box-search {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: max-content;
-    height: 40px;
-    border-radius: 24px;
-    margin-left: 1%;
-    background-color: #0094C6;
-}
-
-.box-search:hover {
-    box-shadow: 0 2px 8px 1px #fafaff4b;
-}
-
-.lupa-btn {
-    width: 70px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-}
-
-.z1asCe {
-    display: inline-block;
-    fill: currentColor;
-    height: 100%;
-    line-height: 24px;
-    position: relative;
-    width: 24px;
-}
-
-.z1asCe svg {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.z1asCe {
-    color: #1C211F;
-    line-height: 24px;
-}
-
-.contract-search {
-    height: 100%;
-    width: 480px;
-    background: transparent;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    outline: none;
-    border: none;
-    padding-left: 15px;
-    color: #1C211F;
-}
-
-.contract-search:focus {
-    color: #1C211F;
 }
 
 .filters {
@@ -251,16 +130,12 @@ body {
 .logo-container {
     width: 100%;
     height: 15%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .center-text {
     width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
     cursor: pointer;
 }
@@ -287,9 +162,7 @@ body {
     -webkit-text-fill-color: transparent;
     width: 100%;
     font-family: 'Train One', cursive;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     transform: 1s;
     height: max-content;
     margin-bottom: -5px;
@@ -302,13 +175,9 @@ body {
     margin-bottom: 5px;
 }
 
-.element-atomic-number,
-.element-mass,
 .element-name {
     width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     height: max-content;
     font-size: 1.3rem;
 }
@@ -326,63 +195,21 @@ body {
 .views-container {
     width: 95%;
     height: 100%;
-    display: flex;
     flex-direction: column;
     background-color: #1C211F;
-    justify-items: center;
     transition: 1s;
     z-index: 999;
     overflow: hidden;
 }
 
-.user-container {
-    width: 100%;
-    height: 8%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #2f2e413f;
-}
-
-.welcome {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.welcome h2 {
-    width: 100%;
-    height: max-content;
-    cursor: default;
-    font-size: 2rem;
-    margin-left: 10%;
-}
-
-.user-img {
-    margin-right: 3%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.user-container img {
-    width: 60px;
-    height: 60px;
-}
-
 .nav-container {
-    display: flex;
     flex-direction: column;
     height: 65%;
-    justify-content: center;
 }
 
 .nav-item {
-    display: flex;
     position: relative;
     flex-direction: row;
-    justify-content: center;
     height: 70px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -532,195 +359,12 @@ body {
     background-color: transparent;
 }
 
-.contract-filters {
-    height: 100%;
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.filter-crypto {
-    border: solid 1px #0094C6;
-    width: 95%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    height: 82.5%;
-    position: relative;
-}
-
-.a5 .main-contracts .second-contracts {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.box-search2 {
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    justify-content: center;
-    width: max-content;
-    height: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    margin-top: 2%;
-    background-color: #0094C6;
-}
-
-.line {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-bottom: solid 0.1px #FAFAFF;
-}
-
-.box-search2:hover {
-    box-shadow: 0 2px 8px 1px #fafaff4b;
-    border: solid 0.3px #FAFAFF;
-}
-
-.filter-by {
-    font-size: 1.5rem;
-    margin-left: 2%;
-    margin-top: 2.5%;
-}
-
-.filters-title {
-    font-size: 1.3rem;
-    margin-left: 7%;
-    margin-top: 2.5%;
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
 .arrow2 {
     margin-top: 1%;
     height: 15px;
     width: 15px;
     transform: rotate(-90deg);
     cursor: pointer;
-}
-
-.contract-search2 {
-    height: 100%;
-    width: 280px;
-    background: transparent;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
-    outline: none;
-    border: none;
-    padding-left: 15px;
-    color: #1C211F;
-}
-
-.contract-search2:focus {
-    color: #1C211F;
-}
-
-.lupa-btn2 {
-    width: 50px;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: transparent;
-    border-radius: 5px;
-    cursor: pointer;
-    border-top-right-radius: 24px;
-    border-bottom-right-radius: 24px;
-}
-
-.z1asCe2 {
-    display: inline-block;
-    fill: currentColor;
-    height: 100%;
-    line-height: 24px;
-    position: relative;
-    width: 24px;
-    color: #1C211F;
-    line-height: 24px;
-}
-
-.z1asCe2 svg {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.box-check {
-    margin-left: 10%;
-    margin-top: 3%;
-}
-
-.check-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 20px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.check-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    border-width: 20px;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    border-radius: 5px;
-    background-color: #eee;
-}
-
-.check-container:hover input ~ .checkmark {
-    background-color: #ccc;
-}
-  
-.check-container input:checked ~ .checkmark {
-    background-color: #0094C6;
-}
-  
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-  
-.check-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.check-container .checkmark:after {
-    left: 7px;
-    top: 3px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
 }
 
 .title-n {
@@ -774,9 +418,7 @@ body {
 .creator-h {
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     position: relative;
 }
 
@@ -796,14 +438,11 @@ body {
 .creator {
     width: 100%;
     height: max-content;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     transition: 0.5s;
 }
 
 .creator-w {
-    display: flex;
     flex-direction: column;
     position: relative;
 }
@@ -820,9 +459,7 @@ body {
 .inorganic-creator {
     width: 100%;
     height: max-content;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     position: absolute;
     margin-left: -3000px;
     transition: 0.5s;
@@ -831,16 +468,12 @@ body {
 #box-inorganic {
     width: 100%;
     height: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 #mol_nav_bar {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     border: 1px solid #0094C6;
 }
 
@@ -857,9 +490,7 @@ body {
     border: 1px solid #0094C6;
     width: 60%;
     height: 50vh;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 #molecule_preview {
@@ -871,6 +502,11 @@ body {
     margin-left: 5%;
 }
 
+#molecule_preview span:hover {
+    color: orangered;
+    cursor: pointer;
+}
+
 #molecule_preview-canvas {
     display: none;
     width: 100%;
@@ -879,9 +515,7 @@ body {
 
 .align-center {
     width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .elem-abr {
@@ -896,9 +530,7 @@ body {
     border: 1px solid #FAFAFF;
     width: 70%;
     height: 30vh;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -953,9 +585,7 @@ body {
 .organic-creator {
     width: 100%;
     height: max-content;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     position: absolute;
     margin-left: 3000px;
     transition: 0.5s;
@@ -968,9 +598,7 @@ body {
     width: 350px;
     height: 350px;
     margin: 50px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     border: 0.1px solid darkgray;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -1007,9 +635,7 @@ body {
 
 .creator button span {
     width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .bt-title {
@@ -1026,8 +652,7 @@ body {
 
 /* Simulations */
 
-.scene,
-canvas {
+.scene {
     width: 100%;
     height: 100%;
 }
@@ -1038,26 +663,20 @@ canvas {
 .align-middle-h {
     height: 100%;
     width: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .align-middle-w {
     height: max-content;
     width: 100%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
 .tables {
     width: 95%;
     height: 5vh;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .tables h3 {
@@ -1080,15 +699,11 @@ canvas {
     width: 95%;
     height: 90vh;
     margin-top: 20px;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .align-w {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .Periodic-table {
@@ -1109,9 +724,7 @@ canvas {
     color: #FAFAFF;
     font-size: 1rem;
     border: solid 0.5px black;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     cursor: pointer;
 }
 
@@ -1202,9 +815,7 @@ canvas {
 }
 
 .create-function {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
     width: 55%;
     height: 99.5%;
@@ -1213,17 +824,13 @@ canvas {
 .interval {
     width: 100%;
     height: 20%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .center-values {
     width: 50%;
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .center-values div {
@@ -1247,9 +854,7 @@ canvas {
 .function-maker {
     width: 100%;
     height: 79%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -1264,16 +869,12 @@ canvas {
 .function-visualization {
     width: 100%;
     height: 30%;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
 }
 
 .function-visualization div {
     height: 100%;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .function-visualization h2 {
@@ -1286,9 +887,7 @@ canvas {
 .equation {
     width: 50%;
     height: max-content;
-    display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
