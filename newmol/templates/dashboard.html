@@ -61,7 +61,6 @@
             <div class="views-container dfjc">
                 <div class="dash-main dash-element a1 dfjc">
                     <div class="main-contracts title-n">
-                        <h1>Molecule maker</h1>
                         <div class="creator-h dfjc">
                             <div class="inorganic-creator dfjc">
                                 <div class="creator-w">
@@ -131,9 +130,23 @@
                 </div>
                 <div class="dash-view dash-element a2">
                     <div class="main-contracts title-n">
-                        <h1>Simulations</h1>
-                        <div class="scene">
-                            <div></div>
+                        <div class="scene dfjc">
+                            <div class="scene-selection dfjc">
+                                <div class="sim-select dfjc" id="chemistry-simulations">
+                                    <button>Reações</button>
+                                    <button>Preparo de soluções</button>
+                                    <button>Titulação</button>
+                                    <button>Destilação</button>
+                                    <button>Fundição</button>
+                                </div>
+                                <div class="sim-select dfjc" id="physics-simulations">
+                                    <button>Diagramas de Feyman</button>
+                                    <button>Circuitos elétricos</button>
+                                    <button>Ondas e ótica</button>
+                                    <button>Força</button>
+                                    <button>Velocidade e aceleração</button>
+                                </div>
+                            </div>
                         </div>
                         <script src="../static/js/three.min.js"></script>
                         <script src="../static/js/GLTFLoader.js"></script>
@@ -141,18 +154,33 @@
                 </div>
                 <div class="dash-view dash-element a3">
                     <div class="main-contracts title-n">
-                        <h1>Receivers - Anatomy</h1>
+                        <div class="dna-view dfjc">
+                            <div class="dfjc">
+                                <span>Gerar modelo humano 3D</span>
+                                <span>Visualizar fisiologia</span>
+                                <span>Predizer interação de molecula com determinado receptor</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="dash-view dash-element a4">
                     <div class="main-contracts title-n">
-                        <h1>Primer</h1>
+                        <div class="dna-view dfjc">
+                            <div class="dfjc">
+                                <span>Ler formato FASTA</span>
+                                <span>Criar modelo de DNA simples 3D</span>
+                                <span>Criar modelo de DNA com estruturas químicas detalhadas 3D</span>
+                                <span>Selecionar áreas e predizer primers</span>
+                                <span>Predizer aminoácidos (Transcrição) e proteínas (Tradução)</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="dash-view dash-element a5">
                     <div class="main-contracts title-n">
                         <h1 id="table">Periodic Table</h1>
+                        <div id="Mymodal" class="modal"></div>
                         <div class="align-middle-h dfjc">
                             <div class="align-middle-w dfjc">
                                 <div class="tables dfjc">
@@ -167,7 +195,9 @@
                                     <div class="align-w dfjc">
                                         <div class="Periodic-table"></div>
                                     </div>
-                                    <div class="Standard-model"></div>
+                                    <div class="align-w dfjc">
+                                        <div class="Standard-model"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +206,6 @@
 
                 <div class="dash-view dash-element a6">
                     <div class="main-contracts title-n">
-                        <h1>Equations</h1>
                         <div class="chart-box">
                             {% if chart %}
                                 <img src="data:image/png;base64, {{chart|safe}}">
@@ -221,7 +250,14 @@
                 </div>
                 <div class="dash-view dash-element a7">
                     <div class="main-contracts title-n">
-                        <h1>Reports</h1>
+                        <div class="dna-view dfjc">
+                            <div class="dfjc">
+                                <span>Digitar e formatar texto</span>
+                                <span>Adicionar moléculas, equações e gráficos</span>
+                                <span>Gerar com IA modelos de design</span>
+                                <span>Salvar como Word ou Pdf</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

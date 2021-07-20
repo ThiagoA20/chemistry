@@ -19,7 +19,7 @@ dfjc
 
 body {
     background-color: #1C211F;
-    color: #FAFAFF;
+    color: #e6e6ff;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -29,6 +29,17 @@ body {
 .dfjc {
     display: flex;
     justify-content: center;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .back-container {
@@ -217,7 +228,8 @@ body {
 
 .nav-container div:hover {
     color: #1C211F;
-    background-color: #0094C6;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,148,198,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .nav-container div:hover a {
@@ -385,7 +397,7 @@ body {
 #switch {
     width:130px;
     padding:2px;
-    border:4px solid red;
+    border:4px solid #0094C6;
     box-sizing:border-box;
     -webkit-transition:all 03s;
     transition:all 0.5s;
@@ -396,7 +408,8 @@ body {
   #toggle {
     width:35px;
     height:35px;
-    background:red;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,148,198,1) 35%, rgba(0,212,255,1) 100%);
     border-radius:100%;
     position:relative;
     transition:all 0.5s;
@@ -406,11 +419,12 @@ body {
   
   #switch.hover #toggle {
     left:0;
-    background:lime;
+    background: rgb(2,0,36);
+    background: linear-gradient(-90deg, rgba(2,0,36,1) 0%, rgba(0,148,198,1) 35%, rgba(0,212,255,1) 100%);
   }
   
   #switch.hover {
-    border:4px solid lime;
+    border:4px solid #0094C6;
   }
 
 /* Molecule maker */
@@ -610,7 +624,8 @@ body {
 }
 
 #inorganic-bt:hover {
-    background-color: red;
+    background: rgb(2,0,36);
+    background: linear-gradient(-90deg, rgba(2,0,36,1) 0%, rgba(0,148,198,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 /* ligações */
@@ -630,7 +645,8 @@ body {
 /* -------- */
 
 #organic-bt:hover {
-    background-color: lime;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,148,198,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .creator button span {
@@ -649,17 +665,100 @@ body {
     font-weight: bold;
     font-size: 2rem;
 }
+/* 
 
+
+
+*/
 /* Simulations */
+/* 
 
+
+
+*/
 .scene {
     width: 100%;
     height: 100%;
+    flex-direction: column;
 }
 
+.scene-selection {
+    width: 100%;
+    height: 40%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sim-select {
+    width: 30%;
+    height: 100%;
+    margin: 3%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #0094C6;
+    border-radius: 20px;
+}
+
+.sim-select button {
+    width: 70%;
+    height: 12.5%;
+    margin: 2%;
+    color: white;
+    background-color: #0094C6;
+}
+/* 
+
+
+
+*/
+/* Receivers */
+/* 
+
+
+
+*/
+.test{}
+/* 
+
+
+
+*/
+/* Primers */
+/* 
+
+
+
+*/
+.dna-view {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.dna-view div {
+    width: 100%;
+    height: max-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dna-view div span {
+    width: 75%;
+    text-align: center;
+    color: white;
+    margin: 1%;
+}
+/* 
+
+
+
+*/
 /* Periodic table / Standard Model */
+/* 
+ 
 
 
+*/
 .align-middle-h {
     height: 100%;
     width: 100%;
@@ -687,11 +786,11 @@ body {
 }
 
 .chem-table {
-    color: lime;
+    color: #0094C6;
 }
 
 .phys-table {
-    color: red;
+    color: #0094C6;
     opacity: 0.5;
 }
 
@@ -728,6 +827,16 @@ body {
     cursor: pointer;
 }
 
+.p-element-space {
+    width: 4.5vw;
+    height: 8vh;
+    color: #FAFAFF;
+    font-size: 1rem;
+    border: solid 0.5px transparent;
+    flex-direction: column;
+    cursor: default;
+}
+
 .space1 {
     height: 8vh;
     width: 73.6vw;
@@ -760,7 +869,8 @@ body {
 .Actinoids:hover,
 .Lanthanoids:hover,
 .Reactive-nonmetals:hover,
-.Post-transition-metals:hover {
+.Post-transition-metals:hover,
+.Unknown:hover {
     background-color: #FAFAFF;
     color: black;
     font-weight: bold;
@@ -804,9 +914,174 @@ body {
     display: none;
 }
 
+#stmodel-box {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-top: 3%;
+}
 
+#quarks {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#matter {
+    width: 33%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mt-span {
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+    color: #FAFAFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#quarks .stm-particle {
+    background-color: rgb(0, 197, 76);
+}
+
+#quarks .stm-particle:hover,
+#leptons .stm-particle:hover,
+#anti-lepton .stm-particle:hover,
+#anti-quark .stm-particle:hover {
+    background-color: #FAFAFF;
+}
+
+#leptons {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#leptons .stm-particle {
+    background-color: darkslateblue;
+}
+
+#bosons-box {
+    height: 75%;
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#bosons {
+    width: max-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#anti-matter {
+    width: 33%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#anti-quark {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#anti-quark .stm-particle {
+    background-color: darkred;
+}
+
+#anti-lepton {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#anti-lepton .stm-particle {
+    background-color: rgba(255, 174, 0, 0.425);
+}
+
+.stm-particle {
+    width: 7.5vw;
+    height: 12.5vh;
+    color: #FAFAFF;
+    border: solid 0.5px black;
+    font-size: 1.15rem;
+    margin: 5px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.charge-n-simbol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.st-mass,
+.st-name {
+    width: 100%;
+    text-align: center;
+}
+
+.st-mass {
+    margin: 5%;
+}
+
+.st-charge {
+    width: max-content;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.st-simbol {
+    width: max-content;
+    font-size: 3rem;
+}
+
+.stm-particle:hover {
+    background-color: #FAFAFF;
+    color: black;
+}
+/* 
+
+
+
+*/
 /* Equations */
+/* 
 
+
+
+*/
 .chart-box {
     width: max-content;
     height: max-content;

@@ -1,4 +1,5 @@
 from django.db import models
+from pandas.core.algorithms import mode
 
 class Atom(models.Model):
 
@@ -38,5 +39,23 @@ class Atom(models.Model):
     def __str__(self):
         return self.Name
 
-# class Particle(models.Model):
-#     pass
+class Particle(models.Model):
+
+    classes = (
+        ('',''),
+        ('Quark','Quark'),
+        ('Anti-quark', 'Anti-quark'),
+        ('Lépton', 'Lépton'),
+        ('Anti-lépton', 'Anti-lépton'),
+        ('Bóson', 'Bóson'),
+    )
+
+    Name = models.CharField(max_length=200)
+    simbol = models.CharField(max_length=3)
+    mass = models.FloatField()
+    charge = models.FloatField()
+    spin = models.FloatField()
+    classification = models.CharField(max_length=200, choices=classes)
+
+    def __str__(self):
+        return self.Name

@@ -177,14 +177,14 @@ function buildPeriodicTable() {
                 }
                 if (atom == 56) {
                     let space = `
-                        <div class='p-element'></div>
+                        <div class='p-element-space'></div>
                     `
                     lineiterator.innerHTML += space
                     nmax -= 1
                     atom += 16
                 } else if (atom == 88) {
                     let space = `
-                        <div class='p-element'></div>
+                        <div class='p-element-space'></div>
                     `
                     lineiterator.innerHTML += space
                     atom += 16
@@ -218,8 +218,201 @@ function buildPeriodicTable() {
                 nmax += 10
             } else {}
         }
+        let atoms = document.getElementsByClassName('p-element')
+        let modal = document.getElementById('Mymodal')
+        for (let u = 0; u < atoms.length; u++) {
+            atoms[u].addEventListener('click', function(){
+                modal.style.display = 'block'
+                console.log('modal')
+            })
+        }
     })
 }
+
+buildStandardModel()
+
+function buildStandardModel(){
+    let stmodelContainer = smodel
+    stmodelContainer.innerHTML += `<div id='stmodel-box' class='dfjc'></div>`
+    stmodelContainer = document.getElementById('stmodel-box')
+    let url = "http://127.0.0.1:8000/api/stmodel/"
+
+    fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data){
+        let standardModel = data
+        standardModel.sort(function(x, y){
+            return x.id - y.id
+        })
+        stmodelContainer.innerHTML += `
+        <div id='matter'>
+            <span class='mt-span'>Matter</span>
+            <span class='mt-span'>
+                <span class='mt-span'>I</span>
+                <span class='mt-span'>II</span>
+                <span class='mt-span'>III</span>
+            </span>
+        </div>`
+        stmodelContainer = document.getElementById('matter')
+        let maindiv = `<div id='quarks'></div>`
+        stmodelContainer.innerHTML += maindiv
+        maindiv = document.getElementById('quarks')
+        for (i in standardModel){
+            if (standardModel[i].classification == "Quark") {
+                let content = `
+                <div class='stm-particle'>
+                    <div class='st-mass'>
+                        <span>${standardModel[i].mass} MeV/c²</span>
+                    </div>
+                    <div class='charge-n-simbol'>
+                        <div class='st-charge'>
+                            <span>${String(standardModel[i].charge).replace('13', '1/3').replace('23', '2/3')}</span>
+                            <span>${String(standardModel[i].spin).replace('12', '1/2')}</span>
+                        </div>
+                        <div class='st-simbol'>
+                            <span>${standardModel[i].simbol}</span>
+                        </div>
+                    </div>
+                    <div class='st-name'>
+                        <span>${standardModel[i].Name}</span>
+                    </div>
+                </div>`
+                maindiv.innerHTML += content
+            }
+        }
+        maindiv = `<div id='leptons'></div>`
+        stmodelContainer.innerHTML += maindiv
+        maindiv = document.getElementById('leptons')
+        for (i in standardModel){
+            if (standardModel[i].classification == 'Lépton'){
+                let content = `
+                <div class='stm-particle'>
+                    <div class='st-mass'>
+                        <span>${standardModel[i].mass} MeV/c²</span>
+                    </div>
+                    <div class='charge-n-simbol'>
+                        <div class='st-charge'>
+                            <span>${String(standardModel[i].charge).replace('13', '1/3').replace('23', '2/3')}</span>
+                            <span>${String(standardModel[i].spin).replace('12', '1/2')}</span>
+                        </div>
+                        <div class='st-simbol'>
+                            <span>${standardModel[i].simbol}</span>
+                        </div>
+                    </div>
+                    <div class='st-name'>
+                        <span>${standardModel[i].Name}</span>
+                    </div>
+                </div>`
+                maindiv.innerHTML += content
+            }
+        }
+        stmodelContainer = document.getElementById('stmodel-box')
+        stmodelContainer.innerHTML += `<div id='bosons-box'></div>`
+        stmodelContainer = document.getElementById('bosons-box')
+        maindiv = `<div id='bosons'></div>`
+        stmodelContainer.innerHTML += maindiv
+        maindiv = document.getElementById('bosons')
+        for (i in standardModel){
+            if (standardModel[i].classification == 'Bóson'){
+                let content = `
+                <div class='stm-particle'>
+                    <div class='st-mass'>
+                        <span>${standardModel[i].mass} MeV/c²</span>
+                    </div>
+                    <div class='charge-n-simbol'>
+                        <div class='st-charge'>
+                            <span>${String(standardModel[i].charge).replace('13', '1/3').replace('23', '2/3')}</span>
+                            <span>${String(standardModel[i].spin).replace('12', '1/2')}</span>
+                        </div>
+                        <div class='st-simbol'>
+                            <span>${standardModel[i].simbol}</span>
+                        </div>
+                    </div>
+                    <div class='st-name'>
+                        <span>${standardModel[i].Name}</span>
+                    </div>
+                </div>`
+                maindiv.innerHTML += content
+            }
+        }
+        stmodelContainer = document.getElementById('stmodel-box')
+        stmodelContainer.innerHTML += `
+        <div id='anti-matter'>
+            <span class='mt-span'>Anti-Matter</span>
+            <span class='mt-span'>
+                <span class='mt-span'>I</span>
+                <span class='mt-span'>II</span>
+                <span class='mt-span'>III</span>
+            </span>
+        </div>`
+        stmodelContainer = document.getElementById('anti-matter')
+        maindiv = `<div id='anti-quark'></div>`
+        stmodelContainer.innerHTML += maindiv
+        maindiv = document.getElementById('anti-quark')
+        for (i in standardModel){
+            if (standardModel[i].classification == 'Anti-quark'){
+                let content = `
+                <div class='stm-particle'>
+                    <div class='st-mass'>
+                        <span>${standardModel[i].mass} MeV/c²</span>
+                    </div>
+                    <div class='charge-n-simbol'>
+                        <div class='st-charge'>
+                            <span>${String(standardModel[i].charge).replace('13', '1/3').replace('23', '2/3')}</span>
+                            <span>${String(standardModel[i].spin).replace('12', '1/2')}</span>
+                        </div>
+                        <div class='st-simbol'>
+                            <span>${standardModel[i].simbol}</span>
+                        </div>
+                    </div>
+                    <div class='st-name'>
+                        <span>${standardModel[i].Name}</span>
+                    </div>
+                </div>`
+                maindiv.innerHTML += content
+            }
+        }
+        maindiv = `<div id='anti-lepton'></div>`
+        stmodelContainer.innerHTML += maindiv
+        maindiv = document.getElementById('anti-lepton')
+        for (i in standardModel){
+            if (standardModel[i].classification == 'Anti-lépton'){
+                let content = `
+                <div class='stm-particle'>
+                    <div class='st-mass'>
+                        <span>${standardModel[i].mass} MeV/c²</span>
+                    </div>
+                    <div class='charge-n-simbol'>
+                        <div class='st-charge'>
+                            <span>${String(standardModel[i].charge).replace('13', '1/3').replace('23', '2/3')}</span>
+                            <span>${String(standardModel[i].spin).replace('12', '1/2')}</span>
+                        </div>
+                        <div class='st-simbol'>
+                            <span>${standardModel[i].simbol}</span>
+                        </div>
+                    </div>
+                    <div class='st-name'>
+                        <span>${standardModel[i].Name}</span>
+                    </div>
+                </div>`
+                maindiv.innerHTML += content
+            }
+        }
+        let particles = document.getElementsByClassName('stm-particle')
+        let modal = document.getElementById('Mymodal')
+        for (let u = 0; u < particles.length; u++) {
+            particles[u].addEventListener('click', function(){
+                modal.style.display = 'block'
+                console.log('modal')
+            })
+        }
+        modal.addEventListener('click', function(){
+            modal.style.display = 'none'
+            console.log('modal closed')
+        })
+    })
+}
+
 // 
 // 
 // 
