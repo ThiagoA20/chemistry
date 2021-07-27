@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializer import AtomSerializer, ParticleSerializer
 from .models import Atom, Particle
+from .main_app_functions.inorganic_molecules import ProjectInorganicMolecule
 
 
 @api_view(['GET'])
@@ -24,3 +25,8 @@ def get_standard_model(request):
     Particles = Particle.objects.all()
     serializer = ParticleSerializer(Particles, many=True)
     return Response(serializer.data)
+
+
+def inorganic_molecule(request):
+    molecule = ProjectInorganicMolecule()
+    return Response(molecule)

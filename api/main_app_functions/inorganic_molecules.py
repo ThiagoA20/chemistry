@@ -17,3 +17,6 @@ classe_y = df.iloc[:, 4].values
 # print(type(classe_y))
 print(previsores_x[:,0].min(), previsores_x[:,1].min(), previsores_x[:,2].min())
 print(previsores_x[:,0].max(), previsores_x[:,1].max(), previsores_x[:,2].max())
+
+def ProjectInorganicMolecule():
+    pass

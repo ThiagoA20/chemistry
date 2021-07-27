@@ -95,6 +95,13 @@ for (let i = 0; i < dashbt.length; i++) {
     }
 }
 
+// for (i in dashbt.length) {
+//     dashbt[i].addEventListener('click', function(){
+
+//     })
+// }
+
+
 let switchh = document.getElementById('switch')
 let table = document.getElementById('table')
 let count = 1
@@ -121,7 +128,48 @@ switchh.addEventListener('click', () => {
         count = 1
     }
 })
+// 
+// 
+// 
+// 
+// 
+// Simulações
+// 
+// 
+// 
+// 
+// 
 
+let simulation_buttons = document.getElementsByClassName('simulation-button')
+let chem_simulations = document.getElementById('chemistry-simulations')
+let physics_simulation = document.getElementById('physics-simulations')
+
+for (let i = 0; i < simulation_buttons.length; i++){
+    simulation_buttons[i].addEventListener('click', function() {
+        chem_simulations.style.margin = "0px 0px 0px -700px"
+        physics_simulation.style.margin = "0px 0px 0px 3000px"
+    })
+}
+
+document.addEventListener('keydown', function(e){
+    if (e.key === "Escape"){
+        console.log('working...')
+        chem_simulations.style.margin = "0px 1.5% 0px 1.5%"
+        physics_simulation.style.margin = "0px 1.5% 0px 1.5%"
+    }
+})
+
+// 
+// 
+// 
+// 
+// 
+// Tabela Periodica / Standard Model
+// 
+// 
+// 
+// 
+// 
 buildPeriodicTable()
 
 function buildPeriodicTable() {
